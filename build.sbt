@@ -1,4 +1,4 @@
-name := "issue10709-scala"
+name := "mockito-spy-issue-scala"
 
 version := "0.1"
 
