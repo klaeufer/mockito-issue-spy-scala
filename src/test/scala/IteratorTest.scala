@@ -66,4 +66,14 @@ class IteratorTest {
     val it = spy(i0)
     verify(it, never).next() // FIXME NPE on Linux but not MacOS
   }
+
+  @Test def testFrom(): Unit = {
+    val it = spy(Iterator.from(1))
+    verify(it, never).next()
+  }
+
+  @Test def testIterate(): Unit = {
+    val it = spy(Iterator.iterate(0)(_ + 1))
+    verify(it, never).next()
+  }
 }
