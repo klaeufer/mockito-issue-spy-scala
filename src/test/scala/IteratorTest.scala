@@ -5,12 +5,6 @@ import scala.collection.AbstractIterator
 
 class IteratorTest {
 
-  // https://github.com/scala/scala/blob/v2.12.6/src/library/scala/collection/Iterator.scala#L455
-  @Test def testIteratorFrom(): Unit = {
-    val it = spy(Iterator.from(1))
-    verify(it, never).next() // FIXME NPE on Linux but not MacOS
-  }
-
   @Test def testAbstractIteratorPrivate(): Unit = {
     val i0 = new AbstractIterator[Int] {
       private var i = 1
@@ -67,12 +61,14 @@ class IteratorTest {
     verify(it, never).next() // FIXME NPE on Linux but not MacOS
   }
 
-  @Test def testFrom(): Unit = {
+  // https://github.com/scala/scala/blob/v2.12.6/src/library/scala/collection/Iterator.scala#L156
+  @Test def testFromPrivate(): Unit = {
     val it = spy(Iterator.from(1))
     verify(it, never).next()
   }
 
-  @Test def testIterate(): Unit = {
+  // https://github.com/scala/scala/blob/v2.12.6/src/library/scala/collection/Iterator.scala#L156
+  @Test def testIteratePrivateThis(): Unit = {
     val it = spy(Iterator.iterate(0)(_ + 1))
     verify(it, never).next()
   }
