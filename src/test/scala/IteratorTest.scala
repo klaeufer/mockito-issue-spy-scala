@@ -67,7 +67,7 @@ class IteratorTest {
     verify(it, never).next()
   }
 
-  // https://github.com/scala/scala/blob/v2.12.6/src/library/scala/collection/Iterator.scala#L156
+  // https://github.com/scala/scala/blob/v2.12.6/src/library/scala/collection/Iterator.scala#L131
   @Test def testIteratePrivateThis(): Unit = {
     val it = spy(Iterator.iterate(0)(_ + 1))
     verify(it, never).next()
