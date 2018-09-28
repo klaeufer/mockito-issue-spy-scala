@@ -2,7 +2,7 @@ name := "mockito-spy-issue-scala"
 
 version := "0.1.5"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.7"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 
