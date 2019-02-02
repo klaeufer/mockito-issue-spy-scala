@@ -2,6 +2,8 @@
 
 # Overview
 
+Reported as https://github.com/mockito/mockito/issues/1605
+
 Example of spying on implementation of generic trait in Scala resulting in an NPE.
 
 
@@ -33,7 +35,3 @@ The error also goes away when creating and applying a thunk in the method body:
 ```
 sbt "testOnly SimpleTest"
 ```
-
-# See also
-
-https://github.com/mockito/mockito/issues/1605
