@@ -2,8 +2,8 @@
 
 # Overview
 
-Example of Mockito issue involving an interaction between genericity
-and subtyping in Scala on Linux.
+Example of spying on implementation of generic trait in Scala resulting in an NPE.
+
 
 ```
 trait A[+E] { def m(): E }
@@ -11,6 +11,14 @@ class B extends A[Int] { def m() = -1 }
 
 val s = spy(new B)
 verify(s, never).m() // <-- on Linux this fails with NPE in m() above
+```
+
+The error goes away when removing the implementation relationship between B and A or making A nongeneric.
+
+The error also goes away when creating and applying a thunk in the method body:
+
+```
+  def m() = (() => -1)()
 ```
 
 # Environment
@@ -25,3 +33,7 @@ verify(s, never).m() // <-- on Linux this fails with NPE in m() above
 ```
 sbt "testOnly SimpleTest"
 ```
+
+# See also
+
+https://github.com/mockito/mockito/issues/1605
