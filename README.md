@@ -3,7 +3,7 @@
 # Overview
 
 Example of Mockito issue involving an interaction between genericity
-and inheritance in Scala.
+and subtyping in Scala.
 
 ```
 trait A[+E] { def m(): E }
