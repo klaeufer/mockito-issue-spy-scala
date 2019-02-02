@@ -12,4 +12,4 @@ matrix:
     - env: JDK='OpenJDK 10'
       install: . ./install-jdk.sh -F 10 -L GPL
 
-script: sbt 'testOnly IteratorTest'
+script: sbt 'testOnly SimpleTest'
