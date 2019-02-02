@@ -10,6 +10,6 @@ class SimpleTest {
 
   @Test def test: Unit = {
     val s = spy(new B)
-    verify(s, never).m() // <-- on Linux fails with NPE in m() above
+    verify(s, never).m() // <-- on Linux this fails with NPE in m() above
   }
 }
