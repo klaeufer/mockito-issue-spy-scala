@@ -13,6 +13,13 @@ val s = spy(new B)
 verify(s, never).m() // <-- on Linux fails with NPE in m() above
 ```
 
+# Environment
+
+- Oracle Java 11
+- Scala 2.12.x
+- sbt 1.2.x
+- Mockito 2.x
+
 # How to run
 
 ```
